@@ -24,7 +24,7 @@ contract HMS{
     PatientRecord patientRecords;
     
     function SetRecord(string memory _name, uint _age, string memory _occupation, address _home, address _hospital) public {
-     require (msg.sender == owner || msg.sender == NewHospital,"you are not approve");
+    //  require (msg.sender == owner || msg.sender == NewHospital,"you are not approve");
        patientRecords.home = _home;
         patientRecords.name = _name;
         patientRecords.age = _age;
@@ -41,7 +41,7 @@ contract HMS{
     }
     
     function readRecord(address _home) public view returns(PatientRecord memory){
-        require (msg.sender == owner || msg.sender == NewHospital,"not approve");
+        // require (msg.sender == owner || msg.sender == NewHospital,"not approve");
        return PatientDetails[_home];
     }
     function hospitalCheck(address addr) public view returns(PatientRecord memory){
